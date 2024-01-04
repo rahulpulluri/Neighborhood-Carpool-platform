@@ -1,0 +1,52 @@
+/* confirm_delete.css */
+
+.main .delete-main{
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.main h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem; /* Adjust the size as needed */
+    color: #333;
+}
+
+.main form {
+    display: inline-block; /* Aligns the form content to the center */
+}
+
+.main .btn {
+    display: inline-block; /* Keep buttons inline */
+    padding: 10px 25px; /* Adjust padding as needed, keeping it uniform */
+    margin: 5px; /* Spacing between buttons */
+    border-radius: 4px; /* Consistent border-radius */
+    cursor: pointer;
+    font-weight: bold; /* Optional: if you want the text to be bold */
+    font-size: 0.9rem; /* Ensures text size is consistent */
+    width: 100px; /* Ensures both buttons have the same width */
+    text-align: center; /* Ensures text is centered within button */
+}
+
+.main .btn-danger,
+.main .btn-secondary {
+    border: 1px solid transparent; /* Adds a border to maintain the size if needed */
+}
+
+.main .btn-danger {
+    background-color: #d9534f;
+    color: white;
+}
+
+.main .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.main .btn:hover {
+    opacity: 0.9; /* Optional: if you want a hover effect */
+}

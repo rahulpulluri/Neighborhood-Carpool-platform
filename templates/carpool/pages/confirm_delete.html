@@ -1,0 +1,17 @@
+{% extends 'carpool/base.html' %}
+
+{% load static %}
+
+{% block main %}
+    <div class = "delete-main" >
+  <h2>Are you sure you want to delete this carpool?</h2>
+  <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Delete</button>
+      <a href="{% url 'carpool:myCarpool' %}" class="btn btn-secondary">Cancel</a>
+  </form>
+    </div>
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/confirm_delete.css" %}">
+{% endblock %}

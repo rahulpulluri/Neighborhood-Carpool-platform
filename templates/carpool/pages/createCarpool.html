@@ -1,0 +1,53 @@
+{% extends "carpool/base.html" %}
+
+{% load static %}
+
+{% block main %}
+        <!-- Carpool creation form -->
+          <div>
+                <!-- Carpool creation form -->
+                <form id="carpool-form" action="{% url 'carpool:createCarpool' %}" method="post">
+                  <label for="Cname">Car Model</label>
+                  <input type="text" id="fname" name="Carname" placeholder="Honda Accord..">
+
+                  <label for="Depature">Departure</label>
+                  <input type="number" id="departure-time" name="Dtime">
+
+                  <label for="Arrival">Arrival</label>
+                  <input type="number" id="arrival-time" name="Atime">
+
+                  <label for="Route">Route</label>
+                  <input type="text" id="Rname" name="Route" placeholder="Arlington - Falls Church">
+
+                  <label for="Available seats">Available seats</label>
+                  <input type="number" id="Aseats" name="Aseats" placeholder="2">
+
+                  <!-- Submit button for carpool creation -->
+                  <input type="submit" id="submit-button" value="Add Carpool">
+                  {% csrf_token %}
+                </form>
+            </div>
+
+        <!-- Modal dialog container -->
+{#        <div id="modal-container" class="modal">#}
+{#            <div class="modal-content">#}
+{#                <span class="close-button">&times;</span>#}
+{#                <h2>Success!</h2>#}
+{#                <p>Your carpool has been successfully registered.</p>#}
+{#                <button id="modal-close-button">Close</button>#}
+{#            </div>#}
+{#        </div>#}
+
+
+{% endblock %}
+
+
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/createCarpool.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/popup.css" %}">
+{% endblock %}
+
+{#<script src="{% static 'js/createCarpool.js' %}"></script>#}
+{##}
+{#<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>#}

@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+
+}
+
+.search-input {
+    width: 150px; /* Adjust the width as needed */
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.search-button {
+    background-color: #a5a5a5; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.search-button:hover {
+    background-color: #424242;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+section .main .search-container{
+    position: relative !important;
+    top: 10%;
+    margin: 60px;
+}
+
+h2 {
+    text-align: center;
+    padding: 25px
+}
+
+#myInput {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+#myTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#myTable th, #myTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#myTable th, #myTable td div.carpool-pts-button{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+#myTable th {
+    background-color: #f2f2f2;
+}
+
+#myTable tr:hover {
+    background-color: #f2f2f2;
+}
+
+tr {
+    cursor: pointer;
+}
+tr a {
+    cursor: pointer;
+    font-size: 17px;
+    text-decoration: none;
+    color: grey;
+
+}
+tr:hover {
+    color: #000000;
+}
+
+ul.messages {
+    font-weight: bold;
+    padding: 1em;
+    margin: 0;
+    list-style: none;
+}
+
+ul.messages li.success{
+    background-color: lightgreen ;
+    padding: 1em;
+    margin: 0.25em;
+}
+ul.messages li.info{
+    background-color: lightblue ;
+    padding: 1em;
+    margin: 0.25em;
+}
+ul.messages li.warning{
+    background-color: red ;
+    padding: 1em;
+    margin: 0.25em;
+}
+
+td .btn {
+    display: inline-block;
+    padding: 8px 15px; /* Adjust padding to your preference */
+    margin: 5px; /* Adds space around the buttons */
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none; /* Remove underline from anchor tags */
+    color: white; /* Text color */
+}
+#myTable th, #myTable td a{
+    font-size: 12px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+/* Button hover effects */
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #0056b3;
+    border-color: #004085;
+    text-decoration: none; /* Remove underline from anchor tags */
+    color: white; /* Ensures the text color remains white */
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+    background-color: #c82333;
+    border-color: #bd2130;
+    text-decoration: none; /* Remove underline from anchor tags */
+    color: white; /* Ensures the text color remains white */
+}
+.increment, .decrement {
+    padding: 5px 10px; /* Adjust the padding as needed */
+    background-color: #959595; /* Set your desired background color */
+    color: white; /* Set your desired text color */
+    border: none; /* Removes the border */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    font-weight: bold; /* Makes the plus and minus signs bold */
+    border-radius: 5px; /* Optional: rounds the corners of the buttons */
+    margin: 0 5px; /* Adds margin to the left and right of the buttons */
+}
+
+.increment:hover, .decrement:hover {
+    background-color: #45a049; /* Darker shade for hover effect */
+}

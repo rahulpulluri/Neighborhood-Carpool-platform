@@ -1,0 +1,13 @@
+{% extends "carpool/base.html" %}
+{% load static %}
+{% block main %}
+    <div class="main_img">
+                <img src="{% static "img/check_grey.jpg" %}">
+                <h3>Request Accepted</h3>
+                <h4>Track my Ride</h4>
+            </div>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/success.css" %}">
+{% endblock %}

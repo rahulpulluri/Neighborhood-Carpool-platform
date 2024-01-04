@@ -1,0 +1,45 @@
+{% extends "carpool/base.html" %}
+
+{% load static %}
+
+{% block main %}
+   <div class="carpool-details">
+        <h2>Car Pool Details</h2>
+        <p>Car Model: {{ carpool.carModel }}</p>
+        <p>Route: {{ carpool.route }}</p>
+        <p>Available Seats: {{ carpool.availableSeats }}</p>
+        <!-- Add other details as needed -->
+
+        <div class="button-container">
+            <button class="btn btn-primary" onclick="showEditForm()">Edit</button>
+            <button class="btn btn-danger" onclick="confirmDelete()">Delete</button>
+        </div>
+
+        <div class="edit-form" style="display: none;">
+    <form id="editForm">
+        <!-- Form fields for editing car details -->
+        <div class="form-group">
+            <label for="carModelEdit">Car Model:</label>
+            <input type="text" class="form-control" id="carModelEdit" value="{{ carpool.carModel }}">
+        </div>
+        <div class="form-group">
+            <label for="routeEdit">Route:</label>
+            <input type="text" class="form-control" id="routeEdit" value="{{ carpool.route }}">
+        </div>
+        <div class="form-group">
+            <label for="availableSeatsEdit">Available Seats:</label>
+            <input type="number" class="form-control" id="availableSeatsEdit" value="{{ carpool.availableSeats }}">
+        </div>
+        <!-- Add other fields as needed -->
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+    </div>
+
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/detail.css" %}">
+{% endblock %}
+
+<script src="{% static 'js/details.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

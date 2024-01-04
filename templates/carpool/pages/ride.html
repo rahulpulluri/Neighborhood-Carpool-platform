@@ -1,0 +1,36 @@
+{% extends "carpool/base.html" %}
+{% load static %}
+{% block main %}
+    <div class="main_tag">
+        <!-- Main heading -->
+        <h1>Find a Ride</h1>
+        <!-- List of ride options -->
+        <ul>
+            <a href="{% url 'carpool:success' %}" class="main_btn">Request to join</a>
+            <li>Car Model: Honda Civic<br>
+                Departure: 7:00 AM<br>
+                Arrival: 6:00 PM<br>
+                Route: Tyson Corner to Alexandria<br>
+                Available seats: 2<br>
+                Preference: non-smoking passengers</li>
+            <a href="{% url 'carpool:success' %}" class="main_btn">Request to join</a>
+            <li>Car Model: Toyota Corolla<br>
+                Departure: 9:00 AM<br>
+                Arrival: 7:00 PM<br>
+                Route: Arlington to Ashburn<br>
+                Available seats: 1<br>
+                Preference: only male</li>
+            <a href="{% url 'carpool:success' %}" class="main_btn">Request to join</a>
+            <li>Car Model: Honda Accord<br>
+                Departure: 7:00 AM<br>
+                Arrival: 6:00 PM<br>
+                Route: Tyson Corner to Arlington<br>
+                Available seats: 2<br>
+                Preference: only female</li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/ride.css" %}">
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "carpool/base.html" %}
+{% load static %}
+
+{% block main %}
+    {% if request.session.username %}
+    <div class="feed">
+    <div class="categories_card">
+        {% include "actions/action/feed.html" %}
+    </div>
+    </div>
+{% endif %}
+    <div class="main_tag">
+        <!-- Main heading and subheading -->
+        <h1>Your Neighborhood, Your Carpool<br><span>Welcome to the future of commuting in your neighborhood. Share rides, reduce costs, and build friendships along the way.</span></h1>
+
+        <!-- CTA button -->
+        <a href="{% url 'carpool:ride' %}" class="main_btn">Explore Rides</a>
+    </div>
+    <div class="main_img">
+        <!-- Main image -->
+        <img src="{% static "img/7197526.jpg" %}">
+    </div>
+{% endblock %}
+
+

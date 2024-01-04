@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.extra-padding {
+    padding: 20px;
+    background-color: #f4f4f4; /* Light grey background */
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto; /* Center the form */
+}
+
+.extra-padding form {
+    display: flex;
+    flex-direction: column;
+}
+
+.extra-padding label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.extra-padding input[type="text"],
+.extra-padding input[type="email"],
+.extra-padding input[type="password"],
+.extra-padding input[type="first_name"],
+.extra-padding input[type="last_name"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.extra-padding input[type="submit"] {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.extra-padding input[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.extra-padding p {
+    font-style: italic;
+}
+
+/* Add styling for the section heading */
+#section-heading {
+    text-align: center; /* Center the title */
+   /* Adds space above the title */
+    margin-bottom: 2vh; /* Adds space below the title pushing the form down */
+    font-size: 2rem; /* Adjust the font size as needed */
+    color: #135a3b; /* Use your desired color */
+    padding-top: 10vh; /* Adds padding at the top to push the title down from the nav */
+}
+
+/* Adjust the .extra-padding class to add space at the top */
+.extra-padding {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    max-width: 600px;
+
+    /* Other styles remain the same */
+}

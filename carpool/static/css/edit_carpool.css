@@ -1,0 +1,79 @@
+/* edit_carpool.css */
+
+* {
+    box-sizing: border-box; /* Ensures padding and borders are included in the width/height */
+}
+
+.main .edit-main {
+    margin: 30px auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.main h2 {
+    margin-bottom: 25px;
+    color: #333;
+    text-align: center;
+}
+
+.main form {
+    margin-top: -100px;
+    display: block;
+    padding: 0;
+}
+
+.main label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.main input[type="text"],
+.main input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.main .btn {
+    padding: 10px;
+    margin-top: 127px;
+    margin-left: 26px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: white;
+    background-color: #007bff;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.main .btn-primary {
+    border-color: #0056b3;
+}
+
+.main .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Add responsive behavior */
+@media (max-width: 768px) {
+    .main .edit-main {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .main input[type="text"],
+    .main input[type="number"] {
+        .main .btn { /* Make sure to include the button in the media query as well */
+            padding: 10px;
+        }
+    }
+}

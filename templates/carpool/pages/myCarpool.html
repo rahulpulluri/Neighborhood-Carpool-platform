@@ -1,0 +1,63 @@
+{% extends "carpool/base.html" %}
+
+{% load static %}
+
+{% block main %}
+    <div class="search-container">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+     <h2>Search Rides</h2>
+        <div class="search-bar">
+            <input type="text" id="myInput" placeholder="Search for names..">
+            <button onclick="searchTable()" class="search-button">Search</button>
+        </div>
+    <table id="myTable">
+        <tr class="header">
+            <th>Name</th>
+            <th>Car Model</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Route</th>
+            <th>Available Seats</th>
+            <th>Actions</th>
+        </tr>
+        {% for carpool in carpools %}
+            <tr>
+{#               <td><a href="{% url 'carpool:carpool_detail' carpool.carpoolid %}">{{ carpool.carModel }}</a></td>#}
+                <td>{{ carpool.name }}</td>
+                <td>{{ carpool.carModel }}</td>
+                <td>{{ carpool.departureTime }}</td>
+                <td>{{ carpool.arrivalTime }}</td>
+                <td>{{ carpool.route }}</td>
+                <td><div class="availableSeats">{{ carpool.availableSeats }}</div></td>
+                <td>
+                    <div class="carpool-pts-button">
+                        <button class="increment" data-carpool-id="{{ carpool.id }}" data-ajax-url="{% url 'carpool:carpool-increment' %}">+</button>
+                        <button class="decrement" data-carpool-id="{{ carpool.id }}" data-ajax-url-decrement="{% url 'carpool:carpool-decrement' %}">-</button>
+                    </div>
+                </td>
+                {% if request.user.is_superuser or carpool.name == request.user.username %}
+
+                <td>
+                    <a href="{% url 'carpool:edit_carpool' carpool.id %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'carpool:delete_carpool' carpool.id %}" class="btn btn-danger">Delete</a>
+                </td>
+            {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/myCarpool.css" %}">
+{% endblock %}
+<script src="{% static 'js/myCarpool.js' %}"></script>
+<script src="{% static 'js/booking.js' %}"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

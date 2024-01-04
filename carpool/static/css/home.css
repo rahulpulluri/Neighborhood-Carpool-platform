@@ -1,0 +1,410 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Section styles */
+section {
+    width: 100%;
+    height: 95vh;
+    /* Background image properties */
+    /* background-image: url(image/bg.png); */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Navigation styles */
+section nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 0 10px #BBBBBB;
+    background: #e7e7e7;
+    position: fixed;
+    left: 0;
+    z-index: 100;
+}
+
+section nav .logo img {
+    width: 200px;
+    cursor: pointer;
+    margin: 8px -124px;
+    mix-blend-mode: multiply;
+}
+
+section nav ul {
+    list-style: none;
+}
+
+section nav li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+section nav li a {
+    text-decoration: none;
+    color: #000;
+}
+
+section nav li a:hover {
+    color: #089da1;
+}
+
+section nav .social_icon i {
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+section nav .social_icon i:hover {
+    color: #089da1;
+    cursor: pointer;
+}
+
+section nav .social_user i {
+    margin: 0 5px;
+    font-size: 18px;
+}
+
+section nav .social_user i:hover {
+    color: #089da1;
+    cursor: pointer;
+}
+
+section nav .search-container {
+    display: flex;
+    float: right;
+}
+  
+section nav .search-container input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+  }
+  
+section nav .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+  
+section nav .search-container button:hover {
+    background: #ccc;
+  }
+  /* Responsive styles for screens up to 600px */
+  @media screen and (max-width: 600px) {
+    section nav .search-container {
+      float: none;
+    }
+    .search-container input[type=text], .search-container button {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .search-container input[type=text] {
+      border: 1px solid #ccc;  
+    }
+}
+
+
+/* Main section styles */
+section .main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top: 10%;
+}
+
+section .main h1 {
+    position: relative;
+    font-size: 50px;
+    top: 80px;
+    left: 25px;
+}
+
+section .main h1 span {
+    font-size: 30px;
+}
+
+section .main h1 span {
+    color: rgb(137 132 132);
+}
+
+section .main p {
+    width: 650px;
+    text-align: justify;
+    line-height: 22px;
+    position: relative;
+    top: 125px;
+    left: 25px;
+}
+
+section .main .main_tag .main_btn {
+    background: #939292;
+    padding: 10px 30px;
+    border-radius: 10px;
+    position: relative;
+    top: 115px;
+    left: 295px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+section .main .main_tag .main_btn:hover {
+    background: #646464;
+}
+
+section .main a {
+    font-size: 27px;
+}
+
+section .main .main_img img {
+    width: 780px;
+    position: relative;
+    top: 60px;
+    /* left: 20px; */
+}
+
+/* Banner styles */
+.banner {
+    width: 100%;
+    height: 50vh;
+    background-image: url(image/banner.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.banner .banner_btn {
+    padding: 8px 20px;
+    background: #089da1;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    top: 70%;
+    left: 7%;
+}
+
+/* Footer styles */
+footer {
+    width: 100%;
+    background: #eaeaea;
+}
+
+footer .footer_main {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .footer_main .tag {
+    display: inline;
+    color: #000000;
+    margin: 10px 0;
+}
+
+footer .footer_main .tag a {
+    display: inline;
+    color: #3f3f3f;
+    margin: 10px 0;
+}
+
+footer .footer_main .tag a:hover {
+    display: inline;
+    color: #000000;
+    margin: 10px 0;
+}
+
+footer .footer_main .tag .social_link i {
+    position: relative;
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+footer .footer_main .tag .social_link :hover {
+    position: relative;
+    color: #089da1;
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+
+
+/* CSS for modal dialog */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 5px;
+    width: 50%;
+    text-align: center;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+.modal {
+    display: flex;
+}
+/** Style for category section *!*/
+.feed .categorys{
+    margin-left: 20%;
+    height: 70vh;
+    margin-bottom: 200px;
+}
+
+/* Style for category section heading */
+.feed .categorys h1{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* Style for category cards */
+.feed .categorys .categorys_box{
+    left: 402px;
+    top: 45px;
+    position: absolute;
+    width: 59%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.feed .categorys .categorys_box .categorys_card{
+    margin-top: 14%;
+    width: 261px;
+    height: 251px;
+    text-align: center;
+    /* padding: 5px; */
+    /* border: 1px solid #919191;  */
+    display: inline-block;
+}
+
+/* Style for the fixed category card */
+.feed .categories_card {
+    background: #e7e7e7;
+    border: 1px solid #000000;
+    position: fixed;
+    height: 50%;
+    width: 17%;
+    top: -94px;
+    left: 0;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 180px;
+}
+
+.feed .categories_card h2{
+    color: rgb(5, 5, 5);
+    margin-bottom: 30px;
+    margin-left: 10%;
+    font-size: 30px;
+}
+
+/*.feed .categories_card a*/
+/*{*/
+/*    margin-left: 5%;*/
+/*    color: #000000;*/
+/*    padding: 10px 15px 10px 16px;*/
+/*    text-decoration: none;*/
+/*    font-size: 25px;*/
+/*    display: block;*/
+/*}*/
+
+/* Style for the active link in the category card */
+.feed .categories_card a:active
+{
+    background-color: 089da1;
+    color: #000000;
+
+
+}
+
+/* Style for the link on hover in the category card */
+.feed .categories_card a:hover
+{
+    background: #ababab;
+}
+
+
+.tab{
+    background: rgb(154 180 157);
+}
+
+.feed .categorys .categorys_box .categorys_card:hover{
+    box-shadow: 0 0 5px #089da1;
+}
+
+/* Style for category card image and tag */
+.feed .categorys .categorys_box .categorys_card .categorys_image{
+    width: 150px;
+    height: 220px;
+    margin: 0 auto;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.feed .categorys .categorys_box .categorys_card .categorys_image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s;
+}
+
+/* Scale image on hover in the category card */
+.feed .categorys .categorys_box .categorys_card:hover .categorys_image img{
+    transform: scale(1.1);
+}
+
+/* Style for category card tag */
+.feed .categorys .categorys_box .categorys_card .categorys_tag p{
+    font-family: queen of camelot;
+    font-size: 20px;
+    margin: 8px 0;
+}
+
+/* Style for category card tag icon */
+.feed .categorys .categorys_box .categorys_card .categorys_tag .categorys_icon{
+    color: #089da1;
+    margin-bottom: 10px;
+}
+
+/* Style for category card tag button */
+.feed .categorys .categorys_box .categorys_card .categorys_tag .categorys_btn{
+    padding: 8px 20px;
+    border: 2px solid #089da1;
+    text-decoration: none;
+    color: #000;
+}

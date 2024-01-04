@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.profile_info {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 147px;
+    left: 402px;
+}
+
+#section-heading {
+    color: #333;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    margin-top: 20px;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0;
+}
+
+
+
+.edit {
+        /* Add your overall styling for the "edit" class here */
+        max-width: 400px;
+        margin: 0 auto;
+        position: absolute;
+        top: 147px;
+        left: 570px;
+    }
+
+    .edit label {
+        /* Add your styling for labels inside the "edit" class here */
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .edit input {
+        /* Add your styling for input fields inside the "edit" class here */
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+    }
+
+    .edit input[type="submit"] {
+        /* Add your styling for the submit button inside the "edit" class here */
+        background-color: black;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .edit input[type="submit"]:hover {
+        /* Add your styling for the submit button on hover inside the "edit" class here */
+        background-color: black;
+    }
+
+

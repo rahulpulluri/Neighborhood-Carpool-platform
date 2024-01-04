@@ -1,0 +1,33 @@
+
+    /* Your CSS styles here */
+    .button-container {
+        margin-top: 20px;
+    }
+
+    .edit-form {
+        display: none;
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .btn {
+        margin-top: 15px;
+    }

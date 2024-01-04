@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Ensure compatibility with IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Define the viewport for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- linking stylesheets -->
+
+
+
+
+    <!-- Page title -->
+    <title>Neighborhood Carpool</title>
+
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static "css/home.css" %}">
+{#    <link rel="stylesheet" type="text/css" href="{% static "css/myCarpool.css" %}">#}
+
+    {% block css %}{% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jAVASCRIPT-->
+    {% comment %}<script src="{% static 'js/createCarpool.js' %}"></script>{% endcomment %}
+{#    <script src="{% static 'js/myCarpool.js' %}"></script>#}
+{#    <script src="{% static 'js/createCarpool.js' %}"></script>#}
+{#    <script src="{% static 'js/booking.js' %}"></script>#}
+{#    <script src="{% static 'js/details.js' %}"></script>#}
+
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <section>
+        <nav>
+            <!-- Logo -->
+            <div class="logo">
+                <a href="{% url 'carpool:pages_home' %}"><img src="{% static "img/logo-color.png" %}"></a>
+            </div>
+
+            <!-- Navigation links -->
+            <ul>
+                {% if request.session.username %}
+                <li><a href="{% url 'carpool:pages_home' %}">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="{% url 'carpool:ride' %}">Ride</a></li>
+                <li><a href="{% url 'carpool:createCarpool' %}">Create Carpool</a></li>
+                <li><a href="{% url 'carpool:myCarpool' %}">My Carpools</a></li>
+                <li>
+                    {% if request.user.is_superuser %}
+                    <a href="{% url 'users:manage_users' %}">User Management</a>
+                    {% endif %}
+                </li>
+
+            </ul>
+
+            <!-- Search bar container -->
+            <div class="search-container">
+                <form id="searchForm" action="search.html" method="GET">
+                  <input type="text" name="query" placeholder="Search.." required>
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            {% endif %}
+
+            <!-- User icons -->
+            {% if request.session.username %}
+
+  <form id ="login_box">
+     <p>Logged in as <a href="{% url "users:profile" request.session.username %}"><strong>{{ request.session.username }}</strong></a>  | <a href="{% url 'users:logout' %}">Log out</a> </p>
+ </form>
+
+ {% else %}
+
+ <form id ="login-box" action="{% url 'users:login' %}" method="POST">
+     {%  csrf_token %}
+     <input type="text" name="username" placeholder="Username">
+     <input type="password" name="pw" placeholder="Password">
+     <input type="submit" name="submit" value="Log in"> or <a href="{% url 'users:register' %}">Register</a>
+ </form>
+
+{% endif %}
+        </nav>
+        <div class="main">
+
+            {% block main %}{% endblock %}
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer_main">
+            <!-- Footer tags with links -->
+            <div class="tag">
+                <a href="home.html">@Copyright2023 | NEIGHGO | Home | About | FAQ |</a>
+                <a href="#Privacy Policy">Privacy Policy</a>
+            </div>
+
+            <!-- Social media links -->
+            <div class="tag">
+                <div class="social_link">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
